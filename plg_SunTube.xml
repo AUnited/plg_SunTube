@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="update">
+  <name>PLG_SYSTEM_SUNTUBE</name>
+  <author>Vitaliy Zhukov</author>
+  <creationDate>December 2014</creationDate>
+  <authorEmail>info@aunited.ru</authorEmail>
+  <authorUrl>http://aunited.ru</authorUrl>
+  <version>0.1</version>
+  <copyright>Copyright (c) 2014 AUnuted. All rights reserved.</copyright>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+  <description>PLG_SUNSTAT_XML_DESCRIPTION</description>
+  <files>
+	<folder>language</folder>
+    <filename plugin="SunStat">SunTube.php</filename>
+    <filename>index.html</filename>
+  </files>
+  <config>
+    <fields name="params" >
+      <fieldset name="Basic">
+		
+      </fieldset>		
+    </fields>
+  </config>
+    <updateservers>
+        <server type="extension" priority="1" name="SunStat"><![CDATA[http://help.aunited.ru/suntube/update/SunTube-update.xml]]></server>
+    </updateservers>
+</extension>
