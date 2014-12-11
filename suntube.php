@@ -46,7 +46,7 @@ class plgContentSunTubePlugin extends JPlugin
 		return true;
 		}
 		
-		$article->text = preg_replace_callback('|{youtube}(.*){\/youtube}|e', '$this->yt_embedVideo("\1")', $article->text);
+		$article->text = preg_replace_callback('|{youtube}(.*){\/youtube}|',function ($match){return $this->embedVideo($vCode);}, $article->text);
 		return true;
 	}
 
