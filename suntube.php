@@ -1,7 +1,7 @@
 <?php
 # @version		$version 0.1 Amvis United Company Limited  $
 # @copyright	Copyright (C) 2014 AUnited Co Ltd. All rights reserved.
-# @license		SunStat has been originally created by Vitaliy Zhukov under GNU/GPL and relicensed under Apache v2.0, see LICENSE
+# @license		SunTube has been originally created by Vitaliy Zhukov under GNU/GPL and relicensed under Apache v2.0, see LICENSE
 # Updated		06th December 2014
 #
 # Site: http://aunited.ru
@@ -21,17 +21,9 @@ jimport( 'joomla.plugin.plugin' );
 
 
 //SunTube Content Plugin
-
-
 class plgContentSunTubePlugin extends JPlugin
 {
 
-	/**
-	* Ctor
-	*
-	* @param object $subject The object to observe
-	* @param object $params The object that holds the plugin parameters
-	*/
 	function PluginSunTube( &$subject, $params )
 	{
 		parent::__construct( $subject, $params );
@@ -54,11 +46,12 @@ class plgContentSunTubePlugin extends JPlugin
 		return true;
 		}
 		
-		$article->text = preg_replace('|{youtube}(.*){\/youtube}|e', '$this->embedVideo("\1")', $article->text);
+		$article->text = preg_replace_callback('|{youtube}(.*){\/youtube}|e', '$this->yt_embedVideo("\1")', $article->text);
 		return true;
 	}
 
-	function embedVideo($vCode)
+
+	function yt_embedVideo($vCode)
 	{
 	 	$params = $this->params;
 
@@ -67,5 +60,24 @@ class plgContentSunTubePlugin extends JPlugin
 	
 		return '<object width="'.$width.'" height="'.$height.'"><param name="movie" value="http://www.youtube.com/v/'.$vCode.'"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.youtube.com/v/'.$vCode.'" type="application/x-shockwave-flash" allowfullscreen="true" width="'.$width.'" height="'.$height.'"></embed></object>';
 	}
+	
+	function rt_embedVideo($vCode)
+	{
+	 	$params = $this->params;
 
+		$width = $params->get('width', 425);
+		$height = $params->get('height', 344);
+	
+		return '<object width="'.$width.'" height="'.$height.'"><param name="movie" value="http://video.rutube.ru/'.$vCode.'"><param name="wmode" value="window"><param name="allowFullScreen" value="true"><embed src="http://video.rutube.ru/'.$vCode.'" type="application/x-shockwave-flash" wmode="window" allowfullscreen="true" width="'.$width.'" height="'.$height.'"></object>';
+	}
+	
+	function vk_embedVideo($vCode)
+	{
+	 	$params = $this->params;
+
+		$width = $params->get('width', 425);
+		$height = $params->get('height', 344);
+	
+		return '<iframe src="http://vk.com/video_ext.php?'.$vCode.'" width="'.$width.'" height="'.$height.'" frameborder="0"></iframe></embed></object>';
+	}
 }
