@@ -42,11 +42,14 @@ class plgContentSunTubePlugin extends JPlugin
 		{
 		global $mainframe;
 
-		if ( JString::strpos( $article->text, '{youtube}' ) === false ) {
+		if ( JString::strpos( $article->text, '{youtube}' ) === false or JString::strpos( $article->text, '{rutube}' ) === false or JString::strpos( $article->text, '{vkvideo}' ) === false or JString::strpos( $article->text, '{vimeo}' ) === false ) {
 		return true;
 		}
 		
-		$article->text = preg_replace_callback('|{youtube}(.*){\/youtube}|',function ($match){return $this->embedVideo($vCode);}, $article->text);
+		$article->text = preg_replace_callback('|{youtube}(.*){\/youtube}|',function ($match){return $this->yt_embedVideo($match[1]);}, $article->text);
+		$article->text = preg_replace_callback('|{rutube}(.*){\/rutube}|',function ($match){return $this->rt_embedVideo($match[1]);}, $article->text);
+		$article->text = preg_replace_callback('|{vkvideo}(.*){\/vkvideo}|',function ($match){return $this->vk_embedVideo($match[1]);}, $article->text);
+		$article->text = preg_replace_callback('|{vimeo}(.*){\/vimeo}|',function ($match){return $this->vm_embedVideo($match[1]);}, $article->text);
 		return true;
 	}
 
@@ -79,5 +82,15 @@ class plgContentSunTubePlugin extends JPlugin
 		$height = $params->get('height', 344);
 	
 		return '<iframe src="http://vk.com/video_ext.php?'.$vCode.'" width="'.$width.'" height="'.$height.'" frameborder="0"></iframe></embed></object>';
+	}
+	
+	function vm_embedVideo($vCode)
+	{
+	 	$params = $this->params;
+
+		$width = $params->get('width', 425);
+		$height = $params->get('height', 344);
+	
+		return '<object width="'.$width.'" height="'.$height.'"><iframe src="//player.vimeo.com/video/'.$vCode.'?badge=0" width="'.$width.'" height="'.$height.'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></object>';
 	}
 }
