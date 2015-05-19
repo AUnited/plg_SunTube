@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.0" type="plugin" group="system" method="update">
+<extension version="3.0" type="plugin" group="system" method="upgrade">
   <name>PLG_SYSTEM_SUNTUBE</name>
   <author>Vitaliy Zhukov</author>
   <creationDate>December 2014</creationDate>
@@ -8,7 +8,7 @@
   <version>0.1</version>
   <copyright>Copyright (c) 2014 AUnuted. All rights reserved.</copyright>
   <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-  <description>PLG_SUNSTAT_XML_DESCRIPTION</description>
+  <description>PLG_SUNTUBE_XML_DESCRIPTION</description>
   <files>
 	<folder>language</folder>
     <filename plugin="SunStat">SunTube.php</filename>
