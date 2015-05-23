@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="plugin" group="system" method="upgrade">
-  <name>PLG_SYSTEM_SUNTUBE</name>
+  <name>PLG_CONTENT_SUNTUBE</name>
   <author>Vitaliy Zhukov</author>
   <creationDate>May 2015</creationDate>
   <authorEmail>info@aunited.ru</authorEmail>
@@ -8,7 +8,7 @@
   <version>0.1</version>
   <copyright>Copyright (c) 2015 AUnuted. All rights reserved.</copyright>
   <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-  <description>PLG_SUNTUBE_XML_DESCRIPTION</description>
+  <description>PLG_CONTENT_SUNTUBE_XML_DESCRIPTION</description>
   <files>
 	<folder>language</folder>
     <filename plugin="SunTube">SunTube.php</filename>
@@ -17,13 +17,13 @@
   <config>
         <fields name="params">
 			<fieldset name="basic">
-				<field name="width" type="text" default="425" label="PLG_SUNTUBE_VIDEO_WIDTH" description="PLG_SUNTUBE_VIDEO_WIDTH_DESC" />
-				<field name="height" type="text" default="344" label="PLG_SUNTUBE_VIDEO_HEIGHT" description="PLG_SUNTUBE_VIDEO_DESC" />
+				<field name="width" type="text" default="425" label="PLG_CONTENT_SUNTUBE_VIDEO_WIDTH" description="PLG_SUNTUBE_VIDEO_WIDTH_DESC" />
+				<field name="height" type="text" default="344" label="PLG_CONTENT_SUNTUBE_VIDEO_HEIGHT" description="PLG_SUNTUBE_VIDEO_DESC" />
 			</fieldset>
 		</fields>	
     </fields>
   </config>
     <updateservers>
-        <server type="extension" priority="1" name="SunStat"><![CDATA[http://help.aunited.ru/suntube/update/SunTube-update.xml]]></server>
+        <server type="extension" priority="1" name="SunTube"><![CDATA[http://help.aunited.ru/suntube/update/SunTube-update.xml]]></server>
     </updateservers>
 </extension>
