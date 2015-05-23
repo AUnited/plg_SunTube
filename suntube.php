@@ -13,6 +13,11 @@
 # is derivative of works licensed under the GNU General Public License or
 # other free or open source software licenses.
 # See COPYRIGHT.php for copyright notices and details.
+# Prefixes
+# yt_ = YouTube
+# rt_ = RuTube
+# vk_ = VKontakte
+# vm_ = Vimeo
 
 // Assert file included in Joomla!
 defined( '_JEXEC' ) or die( 'Restricted access' );
