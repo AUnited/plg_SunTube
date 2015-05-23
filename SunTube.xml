@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+  <name>PLG_CONTENT_SUNTUBE</name>
+  <author>Vitaliy Zhukov</author>
+  <creationDate>May 2015</creationDate>
+  <authorEmail>info@aunited.ru</authorEmail>
+  <authorUrl>http://aunited.ru</authorUrl>
+  <version>0.1</version>
+  <copyright>Copyright (c) 2015 AUnuted. All rights reserved.</copyright>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+  <description><![CDATA[PLG_CONTENT_SUNTUBE_XML_DESCRIPTION]]></description>
+  <files>
+	<folder>language</folder>
+    <filename plugin="SunTube">SunTube.php</filename>
+    <filename>index.html</filename>
+  </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_SunTube.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_SunTube.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.plg_content_SunTube.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.plg_content_SunTube.sys.ini</language>
+    </languages>
+  <config>
+    <fields name="params">
+		<fieldset name="basic">
+			<field name="width" type="text" default="425" label="PLG_CONTENT_SUNTUBE_VIDEO_WIDTH" description="PLG_SUNTUBE_VIDEO_WIDTH_DESC" />
+			<field name="height" type="text" default="344" label="PLG_CONTENT_SUNTUBE_VIDEO_HEIGHT" description="PLG_SUNTUBE_VIDEO_DESC" />
+		</fieldset>
+	</fields>	
+  </config>
+    <updateservers>
+        <server type="extension" priority="1" name="SunTube"><![CDATA[http://help.aunited.ru/suntube/update/SunTube-update.xml]]></server>
+    </updateservers>
+</extension>
