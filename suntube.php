@@ -1,19 +1,12 @@
 <?php
-# @version		$version 0.1 Amvis United Company Limited  $
-# @copyright	Copyright (C) 2014 AUnited Co Ltd. All rights reserved.
-# @license		SunTube has been originally created by Vitaliy Zhukov under GNU/GPL and relicensed under Apache v2.0, see LICENSE
-# Updated		06th December 2014
+# @version		$version 0.1.1 Amvis United Company Limited  $
+# @copyright	Copyright (C) 2016 AUnited Co Ltd. All rights reserved.
+# @license		SunTube licensed under Apache v2.0, see LICENSE.md
+# Updated		08th August 2016
 #
 # Site: http://aunited.ru
-# Email: info@aunited.ru
 # Phone
 #
-# Joomla! is free software. This version may have been modified pursuant
-# to the GNU General Public License, and as distributed it includes or
-# is derivative of works licensed under the GNU General Public License or
-# other free or open source software licenses.
-# See COPYRIGHT.php for copyright notices and details.
-
 // Assert file included in Joomla!
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
